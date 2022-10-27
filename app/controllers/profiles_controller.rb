@@ -12,11 +12,12 @@ class ProfilesController < ApplicationController
   end
 
   private
-    def set_profile
-      @profile = Profile.find(params[:id])
-    end
+  
+  def set_profile
+    @profile = Profile.find(params[:id])
+  end
 
-    def profile_params
-      params.require(:profile).permit(:first_name, :last_name, :email, :phone_number, :birth_date)
-    end
+  def profile_params
+    params.require(:profile).permit(:first_name, :last_name, :email, :phone_number, :birth_date)
+  end
 end
