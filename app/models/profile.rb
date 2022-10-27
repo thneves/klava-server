@@ -8,5 +8,5 @@ class Profile < ApplicationRecord
   validates_presence_of :phone_number
   validates_uniqueness_of :phone_number
 
-  validates_presend_of :birth_date
+  validates_presence_of :birth_date
 end
