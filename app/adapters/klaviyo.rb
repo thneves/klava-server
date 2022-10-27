@@ -44,7 +44,7 @@ class Klaviyo
           first_name: @profile.first_name,
           last_name: @profile.last_name,
           email: @profile.email
-          # "phone_number": profile["phone_number"]
+          # "phone_number": @profile.phone_number -> request not accepting any phone number on API.
         }
       }
     }
