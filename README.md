@@ -1,24 +1,7 @@
-# README
+# Back End API of [React Form Project](https://github.com/thneves/klava-form) responsible for handling data and make requests to [Klaviyo](https://developers.klaviyo.com/en) via API.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Running the Project
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Download this repo, and run `bundle install`
+- Start your server with `rails s`, make sure it's open on port 3000.
+- After you server is running you can go and test the [React Form](https://github.com/thneves/klava-form)
