@@ -13,7 +13,7 @@ module KlavaServer
 
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins '*'
+        origins 'https://klava-form.vercel.app/'
         resource '*', :headers => :any, :methods => [:post, [:options]]
       end
     end
