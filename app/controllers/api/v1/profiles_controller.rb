@@ -31,9 +31,8 @@ class Api::V1::ProfilesController < ApplicationController
   end
 
   def api_error_message(api_response)
-    response = api_response['errors']
-    binding.pry
-    response.map do |res|
+    response = api_response['errors'] || ''
+    response&.map do |res|
       res['detail']
     end
   end
