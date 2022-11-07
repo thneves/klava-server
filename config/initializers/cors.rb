@@ -11,7 +11,7 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
     if Rails.env.development?
       origins '*'
     else
-      origins 'https://klava-form.vercel.app/'
+      origins 'https://klava-form.vercel.app'
     end
     
     resource '*',
