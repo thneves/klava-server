@@ -6,18 +6,17 @@
 # Read more: https://github.com/cyu/rack-cors
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
-   allow do
-     origins "example.com"
-
-     resource "http://localhost:5173",
-     
-       resource '*', :headers => :any, :methods => [:post, [:options]]
-   end
-
-    allow do
-      origins 'https://klava-form.vercel.app/'
-
-      resource '*', :headers => :any, :methods => [:post, [:options]]
+    if Rails.env.production?
+      allow do
+        origins 'https://klava-form.vercel.app/'
+  
+        resource '*', :headers => :any, :methods => [:post, [:options]]
+      end
+    else
+      allow do
+         origins "http://localhost:5173",
+   
+         resource '*', :headers => :any, :methods => [:post, [:options]]
+      end
     end
-  end
 end
