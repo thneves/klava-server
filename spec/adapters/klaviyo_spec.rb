@@ -11,9 +11,8 @@ RSpec.describe Klaviyo do
     }
   end
 
-  let(:profile) { Profile.new(attributes)}
+  let(:profile) { Profile.new(attributes) }
   let(:instance) { described_class.new(profile) }
-
 
   describe '.add_profile' do
     before do
@@ -32,13 +31,11 @@ RSpec.describe Klaviyo do
     it 'creates an instance with correct params' do
       expect(described_class).to receive(:new).with(profile).and_return(instance)
 
-
       subject
     end
   end
 
   describe '#add_profile', :vcr do
-
     subject { instance.add_profile }
 
     it 'makes a requests to add a profile to the list' do
