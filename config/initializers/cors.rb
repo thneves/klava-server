@@ -7,17 +7,9 @@
 
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
-  if Rails.env.production?
-    allow do
-      origins 'https://klava-form.vercel.app/'
-  
-      resource '*', :headers => :any, :methods => [:post, [:options]]
-    end
-  else
-    allow do
-      origins '*'
-  
-      resource '*', :headers => :any, :methods => [:post, [:options]]
-    end
+  allow do
+    origins 'https://klava-form.vercel.app/'
+
+    resource '*', :headers => :any, :methods => [:post, [:options]]
   end
 end
