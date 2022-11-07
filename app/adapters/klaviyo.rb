@@ -9,16 +9,18 @@ class Klaviyo
   end
 
   def add_profile
-    response_profile = HTTParty.post(profile_url, headers: headers, body: profile_data.to_json)
+    return create_profile unless create_profile.code == 201
 
-    return response_profile unless response_profile.code == 201
-
-    id = response_profile['data']['id']
+    id = create_profile['data']['id']
 
     HTTParty.post(list_url, headers: headers, body: list_data(id).to_json)
   end
 
   private
+
+  def create_profile
+    @create_profile ||= HTTParty.post(profile_url, headers: headers, body: profile_data.to_json)
+  end
 
   def headers
     @headers ||= {

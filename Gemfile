@@ -44,6 +44,9 @@ group :development, :test do
   gem 'pry-meta'
   gem 'pry-rails'
   gem 'rubocop'
+  gem 'rspec-rails'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :development do
